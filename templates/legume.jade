@@ -1,7 +1,7 @@
 extends default.jade
 block contentBlock
 	block legumeBlock
-	img(src="#{computeImage(legume)}")
+	img(src="#{computeImage(legume,true)}")
 	p
 		!= legume.cuisine
 	p

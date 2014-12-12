@@ -5,8 +5,8 @@ module.exports = function (grunt) {
 			"legumes": {},
 			"saisons": {}
 		},
-		store = function (o, k) {
-			var s = blocs[k];
+		store = function (o) {
+			var s = blocs[o.type];
 			s[o.nom] = o;
 			o.mois.forEach(function(numMois){
 				if (! blocs.saisons[numMois]){
@@ -32,19 +32,22 @@ module.exports = function (grunt) {
 				options: {
 					data: {
 						"storeLegume" : function(legume) {
-							return store(legume, "legumes");
+							legume.type = "legumes";
+							return store(legume);
 						},
 						"storeFruit" : function(fruit) {
-							return store(fruit, "fruits");
+							fruit.type = "fruits";
+							return store(fruit);
 						},
 						"getLegumes" : function(index){
 							return blocs.saisons[index];
 						},
-						"computeImage" : function(objet){
-							return 'images/' + getNom() + '.png';
+						"computeImage" : function(objet,deep){
+							var prefix = deep ? "../images/" : "images/";
+							return prefix + getNom(objet) + '.png';
 						},
 						"computeLink" : function(objet){
-							return 'fruits/' + getNom() + '.html';
+							return objet.type + '/' + getNom(objet) + '.html';
 						}
 					}
 				}

@@ -4,7 +4,8 @@ block contentBlock
 	ul
 		each val, index in legumesMois
 			li
+				img(src="#{computeImage(val,false)}")
 				h2 <a href="#{computeLink(val)}">#{val.nom}</a>
 				div.cuisine <strong>En cuisine: </strong> #{val.cuisine.substring(50)}...
-				div.bienfaits <strong>Les bienfaits: </strong> #{val.bienfaits.substring(50}...
+				div.bienfaits <strong>Les bienfaits: </strong> #{val.bienfaits.substring(50)}...
 				
