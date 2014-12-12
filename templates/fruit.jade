@@ -1,0 +1,8 @@
+extends default.jade
+block contentBlock
+	block fruitBlock
+	img(src="#{computeImage(fruit)}")
+	p
+		!= fruit.cuisine
+	p
+		!= fruit.bienfaits

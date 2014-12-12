@@ -1,0 +1,10 @@
+extends default
+block contentBlock
+	block moisBlock	
+	ul
+		each val, index in legumesMois
+			li
+				h2 <a href="#{computeLink(val)}">#{val.nom}</a>
+				div.cuisine <strong>En cuisine: </strong> #{val.cuisine.substring(50)}...
+				div.bienfaits <strong>Les bienfaits: </strong> #{val.bienfaits.substring(50}...
+				

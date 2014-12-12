@@ -1,0 +1,23 @@
+doctype html
+html(lang="fr")
+	head
+		meta(charset="utf-8")
+		meta(http-equiv="content-type",content="text/html; charset=utf-8")
+		meta(name="viewport",content="width=device-width,initial-scale=1")
+		block titleBlock
+			title Légumes et fruits de saison
+		block descriptionBlock
+		meta(name="description",content="#{description}")
+		link(href='http://fonts.googleapis.com/css?family=Open+Sans+Condensed:300,700', rel='stylesheet', type='text/css')
+		link(rel="stylesheet",href="/styles/style.css",type="text/css")
+		link(rel="icon",type="image/png",href="/images/favicon.png")
+		script(src="http://code.jquery.com/jquery-2.1.1.min.js")
+		script(src="js/legume.js")
+	body
+		header.banner
+			img(src="images/supprimer-cookies.png", alt="Supprimer ses cookies")
+			.text
+				h1 Legumes-saison.fr
+				p vos légumes à la bonne saison
+		article
+			block contentBlock
