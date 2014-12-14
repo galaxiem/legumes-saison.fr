@@ -17,7 +17,13 @@ module.exports = function (grunt) {
 			return o;
 		},
 		getNom = function(objet){
-			return objet.nom.toLowerCase();
+			//-> lower case
+			var nom = objet.nom.toLowerCase();
+			//spaces -> -
+			nom = nom.replace(/\s/g, "-");
+			//accents e
+			nom = nom.replace(/[éèêë]/g, "e");
+			return nom;
 		};
 	
 	
