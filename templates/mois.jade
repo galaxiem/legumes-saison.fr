@@ -1,10 +1,14 @@
 extends default
 block contentBlock
 	block moisBlock	
-	ul
-		each val, index in legumesMois
-			li
-				img(src="#{computeImage(val,false)}")
-				h2 <a href="#{computeLink(val)}">#{val.nom}</a>
-				div.cuisine <strong>En cuisine: </strong> #{val.cuisine.substring(0,170)}...
-				div.bienfaits <strong>Les bienfaits: </strong> #{val.bienfaits.substring(0,170)}...
+	article
+		h1 #{nomMois}
+		ul.liste-legume
+			each val, index in legumesMois
+				li.section.group
+					.rond.col.span_2_of_12
+						img(src="#{computeImage(val,false)}")
+					.texte.col.span_8_of_12
+						h2 <a href="#{computeLink(val)}">#{val.nom}</a>
+						.col.span_5_of_12.cuisine <strong>En cuisine: </strong> #{val.cuisine.substring(0,170)}...
+						.col.span_5_of_12.bienfaits <strong>Les bienfaits: </strong> #{val.bienfaits.substring(0,170)}...

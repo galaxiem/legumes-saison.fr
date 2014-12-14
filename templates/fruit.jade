@@ -1,8 +1,13 @@
 extends default.jade
 block contentBlock
 	block fruitBlock
-	img(src="#{computeImage(fruit,true)}")
-	p
-		!= fruit.cuisine
-	p
-		!= fruit.bienfaits
+	article
+		.gros-rond
+			img(src="#{computeImage(fruit,true)}")
+		h1 #{fruit.nom}
+		h2 En cuisine
+		p
+			!= fruit.cuisine
+		h2 Les bienfaits
+		p
+			!= fruit.bienfaits

@@ -1,4 +1,6 @@
 extends ../../templates/mois
+block saisonBlock
+	- var saison = "automne"
 block moisBlock
 	- var legumesMois = getLegumes(12)
-	h1 Décembre
+	- var nomMois = "Décembre"

@@ -1,9 +1,8 @@
-@blanc: #f8f8f3;
-@bleu: rgb(19, 159, 205);
+@breakpoint: 474px;
 body {
-	background-color: @blanc;
-	font-family: 'Open Sans Condensed','Georgia';
+	font-family: 'Dancing Script','Georgia';
 	margin-top: 12em;
+	line-height: 1.8em;
 	> article {
 		float:left;
     	width: 60%;
@@ -35,3 +34,10 @@ a {
 a :visited {
 	text-decoration: none;
 }
+
+@import "grid.less";
+@import "saisons.less";
+@import "banner.less";
+@import "ronds.less";
+@import "liste.less";
+@import "nav.less";

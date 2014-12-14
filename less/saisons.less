@@ -1,0 +1,47 @@
+@bleu: rgb(232,237,255); 
+@bleu-fonce: rgb(63,51,209);
+@bleu-noir: rgb(0,4,51);
+
+@jaune: rgb(255,255,219);
+@jaune-fonce: rgb(234,165,0);
+@jaune-noir: rgb(51,30,0);
+
+@orange: rgb(255,240,233);
+@orange-fonce: rgb(214,102,39);
+@orange-noir: rgb(53,11,0);
+
+@vert: rgb(235,252,236);
+@vert-fonce: rgb(19,199,38);
+@vert-noir: rgb(22,52,0);
+
+
+.color-set (@normal, @darker, @darkest) {
+	background-color: @normal;
+	.rond, .petit-rond, .gros-rond {
+		border-color: @darker;
+	}
+	.petit-rond.active, .petit-rond:hover {
+		background-color: @darker;
+		color: @normal;
+	}
+	h1, h2, h3, h4 {
+		color: @darker;
+	}
+	p: @darkest;
+}
+
+.automne {
+	.color-set(@orange, @orange-fonce, @orange-noir);
+}
+
+.hiver {
+	.color-set(@bleu, @bleu-fonce, @bleu-noir);
+}
+
+.ete {
+	.color-set(@jaune, @jaune-fonce, @jaune-noir);
+}
+
+.printemps {
+	.color-set(@vert, @vert-fonce, @vert-noir);
+}

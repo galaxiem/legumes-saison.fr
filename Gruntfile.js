@@ -66,7 +66,7 @@ module.exports = function (grunt) {
 			  cleancss: true
 			},
 			files: {
-			  "www/styles/style.css": "less/style.less"
+			  "www/styles/legume.css": "less/legume.less"
 			}
 		  }
 		},

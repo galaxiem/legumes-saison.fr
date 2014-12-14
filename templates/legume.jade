@@ -1,8 +1,13 @@
 extends default.jade
 block contentBlock
 	block legumeBlock
-	img(src="#{computeImage(legume,true)}")
-	p
-		!= legume.cuisine
-	p
-		!= legume.bienfaits
+	article
+		.gros-rond
+			img(src="#{computeImage(legume,true)}")
+		h1 #{legume.nom}
+		h2 En cuisine
+			p
+				!= legume.cuisine
+		h2 Les bienfaits
+			p
+				!= legume.bienfaits
