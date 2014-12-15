@@ -1,18 +1,25 @@
 module.exports = function (grunt) {
     'use strict';
+	String.prototype.endsWith = function(suffix) {
+		return this.indexOf(suffix, this.length - suffix.length) !== -1;
+	};
 	var blocs = {
-			"fruits": {},
-			"legumes": {},
-			"saisons": {}
+			"fruits": {
+				"saisons": {}
+			},
+			"legumes": {
+				"saisons": {}
+			}
 		},
 		store = function (o) {
-			var s = blocs[o.type];
+			var s = blocs[o.type],
+				st = s.saisons;
 			s[o.nom] = o;
 			o.mois.forEach(function(numMois){
-				if (! blocs.saisons[numMois]){
-					blocs.saisons[numMois] = [];
+				if (! st[numMois]){
+					st[numMois] = [];
 				}
-				blocs.saisons[numMois].push(o);
+				st[numMois].push(o);
 			});
 			return o;
 		},
@@ -37,6 +44,13 @@ module.exports = function (grunt) {
 						{ cwd: "content/mois", src: "**/*.jade", dest: "www/", expand: true, ext: ".html" }],
 				options: {
 					data: {
+						"insertDe" : function(nomMois) {
+							if ("ao".indexOf(nomMois.toLowerCase().charAt(0)) >= 0){
+								return "d'";
+							} else {
+								return "de";
+							}
+						},
 						"storeLegume" : function(legume) {
 							legume.type = "legumes";
 							return store(legume);
@@ -46,7 +60,10 @@ module.exports = function (grunt) {
 							return store(fruit);
 						},
 						"getLegumes" : function(index){
-							return blocs.saisons[index];
+							return {
+								"legumes": blocs.legumes.saisons[index],
+								"fruits": blocs.fruits.saisons[index]
+							};
 						},
 						"computeImage" : function(objet,deep){
 							var prefix = deep ? "../images/" : "images/";
