@@ -48,7 +48,7 @@ module.exports = function (grunt) {
 							if ("ao".indexOf(nomMois.toLowerCase().charAt(0)) >= 0){
 								return "d'";
 							} else {
-								return "de";
+								return "de ";
 							}
 						},
 						"storeLegume" : function(legume) {
