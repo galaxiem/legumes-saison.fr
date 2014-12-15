@@ -7,7 +7,7 @@ block contentBlock
 			each val, index in legumesMois
 				li.section.group
 					.rond.col.span_2_of_12
-						img(src="#{computeImage(val,false)}")
+						img(src="#{computeImage(val,false)}", onload="scale(event);")
 					.texte.col.span_8_of_12
 						h2 <a href="#{computeLink(val)}">#{val.nom}</a>
 							P.cuisine <strong>En cuisine : </strong> #{val.cuisine.substring(0,170)}...

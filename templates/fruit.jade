@@ -3,7 +3,7 @@ block contentBlock
 	block fruitBlock
 	article
 		.gros-rond
-			img(src="#{computeImage(fruit,true)}")
+			img(src="#{computeImage(fruit,true)}", onload="scale(event);")
 		h1 #{fruit.nom}
 		h2 En cuisine
 		p
