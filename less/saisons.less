@@ -1,21 +1,25 @@
 @bleu: rgb(232,237,255); 
 @bleu-fonce: rgb(63,51,209);
 @bleu-noir: rgb(0,4,51);
+@bleu-pastel: rgb(203, 214, 253);
 
 @jaune: rgb(255,255,219);
 @jaune-fonce: rgb(234,165,0);
 @jaune-noir: rgb(51,30,0);
+@jaune-pastel: rgb(252, 252, 186);
 
 @orange: rgb(255,240,233);
 @orange-fonce: rgb(214,102,39);
 @orange-noir: rgb(53,11,0);
+@orange-pastel: rgb(255, 213, 193);
 
 @vert: rgb(235,252,236);
 @vert-fonce: rgb(19,199,38);
 @vert-noir: rgb(22,52,0);
+@vert-pastel: rgb(211, 252, 214);
 
 
-.color-set (@normal, @darker, @darkest) {
+.color-set (@normal, @darker, @darkest, @pastel) {
 	background-color: @normal;
 	.rond, .petit-rond, .gros-rond {
 		border-color: @darker;
@@ -35,31 +39,31 @@
 		color: @darkest;
 	}
 	p.savoir-plus {
-		color: @normal;
+		color: @darker;
 	}
 	a {
 		color:@darker;
 	}
 	ul.liste-legume > li:hover {
-		background-color: @darker;
+		background-color: @pastel;
 		a {
-			color: @normal;
+			color: @darker;
 		}
 	}
 }
 
 .automne {
-	.color-set(@orange, @orange-fonce, @orange-noir);
+	.color-set(@orange, @orange-fonce, @orange-noir, @orange-pastel);
 }
 
 .hiver {
-	.color-set(@bleu, @bleu-fonce, @bleu-noir);
+	.color-set(@bleu, @bleu-fonce, @bleu-noir, @bleu-pastel);
 }
 
 .ete {
-	.color-set(@jaune, @jaune-fonce, @jaune-noir);
+	.color-set(@jaune, @jaune-fonce, @jaune-noir, @jaune-pastel);
 }
 
 .printemps {
-	.color-set(@vert, @vert-fonce, @vert-noir);
+	.color-set(@vert, @vert-fonce, @vert-noir, @vert-pastel);
 }
