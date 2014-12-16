@@ -39,7 +39,8 @@ module.exports = function (grunt) {
         pkg: grunt.file.readJSON('package.json'),
 		jade: {
 			html: {
-				files: [{ cwd: "content/fruits", src: "**/*.jade", dest: "www/fruits", expand: true, ext: ".html" },
+				files: [{ cwd: "content/main", src: "**/*.jade", dest: "www/", expand: true, ext: ".html"},
+						{ cwd: "content/fruits", src: "**/*.jade", dest: "www/fruits", expand: true, ext: ".html" },
 						{ cwd: "content/legumes", src: "**/*.jade", dest: "www/legumes", expand: true, ext: ".html" },
 						{ cwd: "content/mois", src: "**/*.jade", dest: "www/", expand: true, ext: ".html" }],
 				options: {
