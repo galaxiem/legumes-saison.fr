@@ -12,7 +12,6 @@ block contentBlock
 						h2 <a href="#{computeLink(val)}">#{val.nom}</a>
 						p.cuisine <strong>En cuisine : </strong> #{val.cuisine.substring(0,170)}...
 						p.bienfaits <strong>Les bienfaits : </strong> #{val.bienfaits.substring(0,170)}...
-						p.savoir-plus <strong>En savoir plus...</strong>
 		h1(name="fruits") Les fruits #{insertDe(nomMois)}#{nomMois}
 		ul.liste-legume
 			each val, index in legumesMois.fruits
@@ -23,5 +22,3 @@ block contentBlock
 						h2 <a href="#{computeLink(val)}">#{val.nom}</a>
 						p.cuisine <strong>En cuisine : </strong> #{val.cuisine.substring(0,170)}...
 						p.bienfaits <strong>Les bienfaits : </strong> #{val.bienfaits.substring(0,170)}...
-						p.savoir-plus <strong>En savoir plus...</strong>
-							
