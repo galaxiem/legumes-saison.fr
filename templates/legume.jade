@@ -6,8 +6,10 @@ block contentBlock
 			img(src="#{computeImage(legume,true)}", onload="scale(event);")
 		h1 #{legume.nom}
 		h2 En cuisine
-			p
-				!= legume.cuisine
+		p
+			!= legume.cuisine
 		h2 Les bienfaits
-			p
-				!= legume.bienfaits
+		p
+			!= legume.bienfaits
+
+		.fb-like(data-href="https://www.facebook.com/legumesalabonnesaison",data-layout="button_count",data-action="recommend",data-show-faces="false",data-share="true")

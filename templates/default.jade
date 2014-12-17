@@ -19,6 +19,7 @@ html(lang="fr")
 		script(src="http://code.jquery.com/jquery-2.1.1.min.js")
 		script(src="/js/legume.js")
 	body(class=saison!=undefined ? "#{saison}":"")
+		include facebook
 		header.banner
 			.text
 				h1 Légumes-saison.fr
@@ -27,6 +28,7 @@ html(lang="fr")
 		block contentBlock
 		.droite
 			include nav
+			include facebook-likebox-pages
 			include pub2
 			include pub3
-			include analytics
+		include analytics
