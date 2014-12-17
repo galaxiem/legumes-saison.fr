@@ -18,7 +18,7 @@ html(lang="fr")
 		link(rel="icon",type="image/png",href="/images/favicon.png")
 		script(src="http://code.jquery.com/jquery-2.1.1.min.js")
 		script(src="/js/legume.js")
-	body(class=saison!=undefined ? "#{saison}":"")
+	body(class=saison!=undefined ? "#{saison.nom}":"")
 		include facebook
 		header.banner
 			.text
