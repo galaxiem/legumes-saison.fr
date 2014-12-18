@@ -1,6 +1,6 @@
 extends ../../templates/mois
 block saisonBlock
-	- var saison = "ete"
+	- var saison = getSaison(9)
 block moisBlock
-	- var legumesMois = getLegumes(9)
-	- var nomMois = "Septembre"
+	- var mois = getDataMois(9)
+

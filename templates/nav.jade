@@ -1,33 +1,8 @@
-nav.annees
-	h3.col.section.group.printemps Printemps
-	.saison.printemps
-		h4.petit-rond
-			a(href="/avril.html") Avr
-		h4.petit-rond
-			a(href="/mai.html") Mai
-		h4.petit-rond
-			a(href="/juin.html") Juin
-	h3.col.section.group.ete Eté
-	.saison.ete
-		h4.petit-rond
-			a(href="/juillet.html") Juil
-		h4.petit-rond
-			a(href="/aout.html") Aou
-		h4.petit-rond
-			a(href="/septembre.html") Sep.
-	h3.col.section.group.automne Automne
-	.saison.automne
-		h4.petit-rond
-			a(href="/octobre.html") Oct.
-		h4.petit-rond
-			a(href="/novembre.html") Nov.
-		h4.petit-rond
-			a(href="/decembre.html") Déc.	
-	h3.col.section.group.hiver Hiver
-	.saison.hiver
-		h4.petit-rond
-			a(href="/janvier.html") Jan
-		h4.petit-rond
-			a(href="/fevrier.html") Fév
-		h4.petit-rond
-			a(href="/mars.html") Mar
+nav.annee
+	each saison, nom in getSaisons()
+		h3(class="col section group #{nom}") #{saison.titre}
+		div(class="saison #{nom}")
+			each indexMois in saison.mois
+				- var mois = getMois(indexMois)
+				h4.petit-rond
+					a(href="/#{mois.nom}.html") #{mois.titre.substring(0,3)}

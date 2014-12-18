@@ -1,39 +1,6 @@
 module.exports = function (grunt) {
     'use strict';
-	String.prototype.endsWith = function(suffix) {
-		return this.indexOf(suffix, this.length - suffix.length) !== -1;
-	};
-	var blocs = {
-			"fruits": {
-				"saisons": {}
-			},
-			"legumes": {
-				"saisons": {}
-			}
-		},
-		store = function (o) {
-			var s = blocs[o.type],
-				st = s.saisons;
-			s[o.nom] = o;
-			o.mois.forEach(function(numMois){
-				if (! st[numMois]){
-					st[numMois] = [];
-				}
-				st[numMois].push(o);
-			});
-			return o;
-		},
-		getNom = function(objet){
-			//-> lower case
-			var nom = objet.nom.toLowerCase();
-			//spaces -> -
-			nom = nom.replace(/\s/g, "-");
-			//accents e
-			nom = nom.replace(/[éèêë]/g, "e");
-			return nom;
-		};
-	
-	
+	var data = require('./lib/data.js');
     // Project configuration.
     grunt.initConfig({
         pkg: grunt.file.readJSON('package.json'),
@@ -44,36 +11,11 @@ module.exports = function (grunt) {
 						{ cwd: "content/legumes", src: "**/*.jade", dest: "www/legumes", expand: true, ext: ".html" },
 						{ cwd: "content/mois", src: "**/*.jade", dest: "www/", expand: true, ext: ".html" }],
 				options: {
-					data: {
-						"insertDe" : function(nomMois) {
-							if ("ao".indexOf(nomMois.toLowerCase().charAt(0)) >= 0){
-								return "d'";
-							} else {
-								return "de ";
-							}
-						},
-						"storeLegume" : function(legume) {
-							legume.type = "legumes";
-							return store(legume);
-						},
-						"storeFruit" : function(fruit) {
-							fruit.type = "fruits";
-							return store(fruit);
-						},
-						"getLegumes" : function(index){
-							return {
-								"legumes": blocs.legumes.saisons[index],
-								"fruits": blocs.fruits.saisons[index]
-							};
-						},
-						"computeImage" : function(objet,deep){
-							var prefix = deep ? "../images/" : "images/";
-							return prefix + getNom(objet) + '.png';
-						},
-						"computeLink" : function(objet){
-							return objet.type + '/' + getNom(objet) + '.html';
-						}
-					}
+					processName : function(filename){
+						data.changeFileName(filename);
+						return filename;
+					},
+					data: data
 				}
 		  	}
 		},

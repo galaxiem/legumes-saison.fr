@@ -1,0 +1,5 @@
+- var tableauMois = legume ? legume.mois : fruit.mois
+nav.mois
+	each indexMois in tableauMois
+		- var mois = getMois(indexMois)
+		a(class="tag #{mois.saison.nom}", href="../#{mois.nom}.html") #{mois.titre}
