@@ -1,6 +1,13 @@
 extends ../../templates/default
+include ../../templates/mixins/liste-mixin
 block contentBlock
 	article
+		- var moisCourant = new Date().getMonth() + 1
+		section(class="#{getSaison(moisCourant).nom} bloc top")
+			h1 Le fruit du mois
+			+liste(getFruitsDuMois(moisCourant))
+			h1 Le légume du mois
+			+liste(getLegumesDuMois(moisCourant))
 		h1 Pourquoi manger des légumes et des fruits de saison ?
 		p C’est vrai ça. Pourquoi s’embêter à respecter la saison des fruits et des légumes alors que nos supermarchés en regorgent, venues du monde entier, toute l’année !
 		p Si vous n’êtes pas déjà convaincu, voilà plusieurs arguments qui pourraient vous faire réfléchir :

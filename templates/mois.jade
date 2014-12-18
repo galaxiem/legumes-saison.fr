@@ -1,25 +1,10 @@
 extends default
+include mixins/liste-mixin
 block contentBlock
 	block moisBlock	
 	article
 		h1(name="legumes") Les légumes #{insertDe(mois.titre)}#{mois.titre}
-		ul.liste-legume
-			each val, index in mois.legumes
-				li.section.group
-					.rond.col.span_2_of_12
-						img(src="#{computeImage(val,false)}", onload="scale(event);")
-					.texte.col.span_8_of_12
-						h2 <a href="#{computeLink(val)}">#{val.nom}</a>
-						p.cuisine <strong>En cuisine : </strong> #{val.cuisine.substring(0,170)}...
-						p.bienfaits <strong>Les bienfaits : </strong> #{val.bienfaits.substring(0,170)}...
+		+liste(mois.legumes)
 		h1(name="fruits") Les fruits #{insertDe(mois.titre)}#{mois.titre}
-		ul.liste-legume
-			each val, index in mois.fruits
-				li.section.group
-					.rond.col.span_2_of_12
-						img(src="#{computeImage(val,false)}", onload="scale(event);")
-					.texte.col.span_8_of_12
-						h2 <a href="#{computeLink(val)}">#{val.nom}</a>
-						p.cuisine <strong>En cuisine : </strong> #{val.cuisine.substring(0,170)}...
-						p.bienfaits <strong>Les bienfaits : </strong> #{val.bienfaits.substring(0,170)}...
+		+liste(mois.fruits)
 		.fb-share-button(data-href="https://www.facebook.com/legumesalabonnesaison", data-layout="button_count")

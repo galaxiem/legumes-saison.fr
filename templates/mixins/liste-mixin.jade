@@ -1,0 +1,10 @@
+mixin liste(tableau)
+	ul.liste-legume
+		each legume, index in tableau
+			li.section.group
+				.rond.col.span_2_of_12
+					img(src="#{computeImage(legume,false)}", onload="scale(event);")
+				.texte.col.span_8_of_12
+					h2 <a href="#{computeLink(legume)}">#{legume.nom}</a>
+					p.cuisine <strong>En cuisine : </strong> #{legume.cuisine.substring(0,170)}...
+					p.bienfaits <strong>Les bienfaits : </strong> #{legume.bienfaits.substring(0,170)}...
