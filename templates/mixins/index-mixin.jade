@@ -1,0 +1,12 @@
+mixin index(titre, index)
+	h1 #{titre}
+		each lettre in "abcdefghijklmnopqrstuvwxyz"			
+			if index[lettre]
+				h1 #{lettre.toUpperCase()}
+				ul.liste-legume
+					each legume in index[lettre]
+						li
+							.petit-rond
+								img(src="#{computeImage(legume,false)}", onload="scale(event);")
+							.texte
+								h2 <a href="#{computeLink(legume)}">#{legume.nom}</a>

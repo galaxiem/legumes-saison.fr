@@ -1,0 +1,7 @@
+extends default
+include mixins/index-mixin
+block descriptionBlock
+	- var description = "Tous les fruits et légumes " + saison.article + saison.titre
+block contentBlock	
+	article.index
+		+index(description, saison.index)

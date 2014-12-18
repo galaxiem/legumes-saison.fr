@@ -1,6 +1,8 @@
 nav.annee
+	h3 <a href="/legumes.html">Tous les légumes</a>
+	h3 <a href="/fruits.html">Tous les fruits</a>
 	each saison, nom in getSaisons()
-		h3(class="col section group #{nom}") #{saison.titre}
+		h3(class="#{nom}") <a href="/#{nom}.html">#{saison.titre}</a>
 		div(class="saison #{nom}")
 			each indexMois in saison.mois
 				- var mois = getMois(indexMois)

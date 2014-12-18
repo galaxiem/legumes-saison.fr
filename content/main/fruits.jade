@@ -1,0 +1,7 @@
+extends ../../templates/default
+include ../../templates/mixins/index-mixin
+block descriptionBlock
+	- var description = "Tous les fruits par ordre alphabétique"
+block contentBlock	
+	article.index
+		+index("Tous les fruits", getIndexFruits())
