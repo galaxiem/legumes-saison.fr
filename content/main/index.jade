@@ -4,10 +4,35 @@ block contentBlock
 	article
 		- var moisCourant = new Date().getMonth() + 1
 		section(class="#{getSaison(moisCourant).nom} bloc top")
-			h1 Le fruit du mois
-			+liste(getFruitsDuMois(moisCourant))
 			h1 Le légume du mois
 			+liste(getLegumesDuMois(moisCourant))
+			h1 Le fruit du mois
+			+liste(getFruitsDuMois(moisCourant))
+		h1 Le tableau complet des fruits et légumes
+		each saison in getSaisons()
+			section(class="#{saison.nom} tableau bloc vertical-margin")
+				h1 <a href="/#{saison.nom}.html">#{saison.titre}</a>
+				.section.group
+					.fruits.col.span_6_of_12
+						h2 Les fruits
+						each indexMois in saison.mois
+							- var mois = getMois(indexMois)
+							.mois.col.span_3_of_12
+								h3 <a href="/#{mois.nom}.html">#{mois.titre}</a>
+								ul.liens
+									each fruit in getDataMois(indexMois).fruits
+										li 
+											a(href="#{computeLink(fruit)}") #{fruit.nom}
+					.legumes.col.span_6_of_12
+						h2 Les légumes
+						each indexMois in saison.mois
+							- var mois = getMois(indexMois)
+							.mois.col.span_3_of_12
+								h3 #{mois.titre}
+								ul.liens
+									each legume in getDataMois(indexMois).legumes
+										li
+											a(href="#{computeLink(legume)}") #{legume.nom}													
 		h1 Pourquoi manger des légumes et des fruits de saison ?
 		p C’est vrai ça. Pourquoi s’embêter à respecter la saison des fruits et des légumes alors que nos supermarchés en regorgent, venues du monde entier, toute l’année !
 		p Si vous n’êtes pas déjà convaincu, voilà plusieurs arguments qui pourraient vous faire réfléchir :
