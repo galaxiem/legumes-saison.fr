@@ -1,6 +1,10 @@
 extends default.jade
+block dataBlock
+block descriptionBlock
+	- var description = "Découvrez tous sur " + legume.nom
+block titleBlock
+	title #{legume.nom}
 block contentBlock
-	block legumeBlock
 	article
 		.gros-rond
 			img(src="#{computeImage(legume,true)}", onload="scale(event);")
@@ -12,5 +16,4 @@ block contentBlock
 		h2 Les bienfaits
 		p
 			!= legume.bienfaits
-
 		.fb-share-button(data-href="https://www.facebook.com/legumesalabonnesaison", data-layout="button_count")

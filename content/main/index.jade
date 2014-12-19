@@ -1,5 +1,7 @@
 extends ../../templates/default
 include ../../templates/mixins/liste-mixin
+block descriptionBlock
+	- var description = "Légumes (et Fruits) de Saison: à chaque Légume sa saison! Découvrez les légumes et fruits par saison, par mois. Découvrez leurs bienfaits, la façon de les cuisiner, et plus!"
 block contentBlock
 	article
 		- var moisCourant = new Date().getMonth() + 1

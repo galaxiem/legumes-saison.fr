@@ -1,6 +1,9 @@
 extends default.jade
+block descriptionBlock
+	- var description = "Découvrez tous sur " + fruit.nom
+block titleBlock
+	title #{fruit.nom}
 block contentBlock
-	block fruitBlock
 	article
 		.gros-rond
 			img(src="#{computeImage(fruit,true)}", onload="scale(event);")

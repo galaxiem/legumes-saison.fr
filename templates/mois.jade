@@ -1,7 +1,10 @@
 extends default
+block descriptionBlock
+	- var description = "Les fruits et légumes en " + mois.titre
+block titleBlock
+	title #{mois.titre}
 include mixins/liste-mixin
 block contentBlock
-	block moisBlock	
 	article
 		h1(name="legumes") Les légumes #{insertDe(mois.titre)}#{mois.titre}
 		+liste(mois.legumes)
