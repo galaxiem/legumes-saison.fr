@@ -15,5 +15,4 @@ block contentBlock
 		h2 Les bienfaits
 		p
 			!= fruit.bienfaits
-
-		.fb-share-button(data-href="https://www.facebook.com/legumesalabonnesaison", data-layout="button_count")
+		.fb-like(data-href="#{computeLink(fruit, true)}", data-layout="button_count", data-share="true")

@@ -7,4 +7,4 @@ nav.annee.bloc.top
 			each indexMois in saison.mois
 				- var mois = getMois(indexMois)
 				h4.petit-rond
-					a(href="/#{mois.nom}.html") #{mois.titre.substring(0,3)}
+					a(href="/#{mois.nom}.html") #{mois.titre}
