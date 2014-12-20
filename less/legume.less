@@ -1,27 +1,39 @@
 @breakpoint: 474px;
+@breakpoint-droite: 1100px;
+@black: rgb(32, 33, 32);
 @gray: rgb(244, 244, 244);
+
 body {
     font-family:'Lato','sans-serif';
 	margin-top: 12em;
 	line-height: 1em;
 	font-size:0.8em;
-	background-color: @gray;
 	font-weight:300;
 	text-align:justify;
+	max-width: 1024px;
+	margin-left:auto;
+	margin-right:auto;
 
 	> article {
 		float:left;
-		margin-left:10%;
-		margin-right:10%;
-		max-width: 700px;		
+		margin-left:5%;
 		line-height: 1.1em;
 		font-size:1.2em;
+		max-width:600px;
+		> p {
+			max-width: 590px;
+		}
 	}
 	.droite {
 		float:left;
 		width: 300px;
 		margin-left:2%;
-		max-width: 300px;
+	}
+	
+	@media(max-width: @breakpoint-droite) {
+		.droite {
+			display: none;
+		}
 	}
 }
 

@@ -4,26 +4,40 @@ header.banner {
 	left:0;
 	padding-top: 1em;
 	padding-bottom: 1em;
-	background-color: #202120;
+	background-color: @black;
 	color: white;
 	overflow-x: visible;	
 	width:100%;
+	.text {
+		font-family: 'Dancing Script','Georgia';
+		font-size:26px;
+		margin-left:33%;
+		width:33%;
+		margin-top:1%;
+		line-height:0.5;
+		h1, p {
+			color: white;		
+		}
+	}
 }
 
-header.banner:hover {
+header.banner .text:hover, header.banner.slim .menu:hover {
 	cursor: pointer;
 }
 
-header.banner .text {
-    font-family: 'Dancing Script','Georgia';
-	display: block;
-    font-size:26px;
-	margin-left:33%;
-	width:33%;
-    margin-top:1%;
-    line-height:0.5;
-}
-
-.banner p{
-	color: white
+header.banner.slim {
+	bottom: auto;
+	position: fixed;
+	.text {
+		font-size:1em;
+		margin-left:1em;
+		width: 50%;
+	}
+	.menu{
+		display : block;
+		float: right;
+		margin-top: 0.5em;
+		margin-right: 1em;
+		font-size: 3em;		
+	}
 }

@@ -20,6 +20,15 @@ html(lang="fr")
 		script(src="/js/legume.js")
 	body(class=saison!=undefined ? "#{saison.nom}":"")
 		include facebook
+		.overlay
+			.popup.bloc
+				.close X
+				include nav
+		header.banner.slim
+			.menu &#9776;
+			.text
+				h1 Légumes-saison.fr
+				p à chaque légume sa saison
 		header.banner
 			.text
 				h1 Légumes-saison.fr

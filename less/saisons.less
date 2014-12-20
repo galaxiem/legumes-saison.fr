@@ -18,6 +18,9 @@
 @vert-noir: rgb(22,52,0);
 @vert-pastel: rgb(211, 252, 214);
 
+@gris-fonce: rgb(150, 150, 150);
+@gris-pastel: rgb(216, 213, 213);
+
 
 .color-set (@normal, @darker, @darkest, @pastel) {
 	background-color: @normal;
@@ -52,7 +55,25 @@
 	}
 }
 
-.automne, nav.annee .automne {
+.automne header.banner .text h1 {
+	color: @orange-fonce;
+}
+.hiver header.banner .text h1 {
+	color: @bleu-fonce;
+}
+.ete header.banner .text h1 {
+	color: @jaune-fonce;
+}
+
+.printemps header.banner .text h1 {
+	color:  @vert-fonce;
+}
+
+body {
+	.color-set(@gray, @gris-fonce, @black, @gris-pastel)
+}
+
+.automne, nav.annee .automne {	
 	.color-set(@orange, @orange-fonce, @orange-noir, @orange-pastel);
 }
 

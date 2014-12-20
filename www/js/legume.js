@@ -16,7 +16,7 @@ var scale = function(evt) {
 	
 
 $(document).on("ready", function() {
-	$(".banner").click(function(event) {
+	$(".banner .text").click(function(event) {
 		document.location.href = "/";
 		return false;
 	});
@@ -25,5 +25,15 @@ $(document).on("ready", function() {
 	});
 	$("ul.liste-legume > li").click(function(event) {
 		return clique(this);
+	});
+	$(".banner.slim .menu").click(function(event) {
+		$(".overlay").show();
+		$("body").css("overflow", "hidden");
+		return false;
+	});
+	$(".overlay .popup .close").click(function(event) {
+		$(".overlay").hide();
+		$("body").css("overflow", "auto");
+		return false;
 	});
 });
