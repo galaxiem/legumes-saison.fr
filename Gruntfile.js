@@ -9,7 +9,8 @@ module.exports = function (grunt) {
 				files: [{ cwd: "content/fruits", src: "**/*.jade", dest: "www/fruits", expand: true, ext: ".html" },
 						{ cwd: "content/legumes", src: "**/*.jade", dest: "www/legumes", expand: true, ext: ".html" },
 						{ cwd: "content/mois", src: "**/*.jade", dest: "www/", expand: true, ext: ".html" },
-					    { cwd: "content/main", src: "**/*.jade", dest: "www/", expand: true, ext: ".html"}],
+					    { cwd: "content/main", src: "**/*.jade", dest: "www/", expand: true, ext: ".html"},
+						{ cwd: "content/sitemap", src: "**/*.jade", dest: "www/", expand: true, ext: ".xml"}],
 				options: {
 					processName : function(filename){
 						return data.changeFileName(filename);

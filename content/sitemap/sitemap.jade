@@ -1,0 +1,23 @@
+| <?xml version="1.0" encoding="UTF-8"?>
+urlset(xmlns="http://www.sitemaps.org/schemas/sitemap/0.9", xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance", xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd")
+	url
+		loc http://www.legumes-saison.fr/
+	url
+		loc http://www.legumes-saison.fr/fruits.html
+	url
+		loc http://www.legumes-saison.fr/legumes.html
+	each saison in getSaisons()
+		url
+			loc http://www.legumes-saison.fr/#{saison.nom}.html
+		each indexMois in saison.mois
+			- var mois = getMois(indexMois)
+			url
+				loc http://www.legumes-saison.fr/#{mois.nom}.html
+	each tableauLegume in getIndexLegumes()
+		each legume in tableauLegume
+			url
+				loc #{computeLink(legume, true)}
+	each tableauFruit in getIndexFruits()
+		each fruit in tableauFruit
+			url
+				loc #{computeLink(fruit, true)}
