@@ -1,0 +1,3 @@
+User-agent: *
+Disallow: 
+Sitemap: http://www.legumes-saison.fr/sitemap.xml
