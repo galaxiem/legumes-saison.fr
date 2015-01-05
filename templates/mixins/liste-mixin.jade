@@ -1,10 +1,10 @@
 mixin liste(tableau)
 	ul.liste-legume
 		each legume, index in tableau
-			li.section.group
+			li.section.group(itemscope, itemtype="http://schema.org/Intangible")
 				.rond.col.span_2_of_12
-					img(src="#{computeImage(legume,false)}", onload="scale(event);")
+					img(src="#{computeImage(legume,false)}", onload="scale(event);", itemprop="image")
 				.texte.col.span_8_of_12
-					h2 <a href="#{computeLink(legume)}">#{legume.nom}</a>
+					h2(itemprop="name") <a href="#{computeLink(legume)} itemprop="url">#{legume.nom}</a>
 					p.cuisine <strong>En cuisine : </strong> #{legume.cuisine.substring(0,170)}...
-					p.bienfaits <strong>Les bienfaits : </strong> #{legume.bienfaits.substring(0,170)}...
+					p.bienfaits(itemprop="description") <strong>Les bienfaits : </strong> #{legume.bienfaits.substring(0,170)}...

@@ -5,11 +5,11 @@ block descriptionBlock
 block titleBlock
 	title #{legume.nom}
 block contentBlock
-	article
+	article(itemscope, itemtype="http://schema.org/Intangible")
 		.gros-rond
-			img(src="#{computeImage(legume,true)}", onload="scale(event);")
+			img(src="#{computeImage(legume,true)}", onload="scale(event);", itemprop="image")
 		include navMois
-		h1 #{legume.nom}
+		h1(itemprop="name") #{legume.nom}
 		h2 En cuisine
 		p
 			!= legume.cuisine
