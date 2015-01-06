@@ -1,63 +1,63 @@
 extends ../../templates/default
 include ../../templates/mixins/liste-mixin
 block descriptionBlock
-	- var description = "Légumes (et Fruits) de Saison: à chaque Légume sa saison! Découvrez les légumes et fruits par saison, par mois. Découvrez leurs bienfaits, la façon de les cuisiner, et plus!"
+    - var description = "Découvrez les fruits et les légumes par saison, leurs bienfaits et la façon de les cuisiner!"
 block contentBlock
-	article
-		- var moisCourant = new Date().getMonth() + 1
-		section(class="#{getSaison(moisCourant).nom} bloc top")
-			h1 Le légume du mois
-			+liste(getLegumesDuMois(moisCourant))
-			h1 Le fruit du mois
-			+liste(getFruitsDuMois(moisCourant))
-		h1 Le tableau complet des fruits et légumes
-		each saison in getSaisons()
-			section(class="#{saison.nom} tableau bloc vertical-margin")
-				h1 <a href="/#{saison.nom}.html">#{saison.titre}</a>
-				.section.group
-					.fruits.col.span_6_of_12
-						h2 Les fruits
-						each indexMois in saison.mois
-							- var mois = getMois(indexMois)
-							.mois.col.span_3_of_12
-								h3 <a href="/#{mois.nom}.html">#{mois.titre}</a>
-								ul.liens
-									each fruit in getDataMois(indexMois).fruits
-										li 
-											a(href="#{computeLink(fruit)}") #{fruit.nom}
-					.legumes.col.span_6_of_12
-						h2 Les légumes
-						each indexMois in saison.mois
-							- var mois = getMois(indexMois)
-							.mois.col.span_3_of_12
-								h3 #{mois.titre}
-								ul.liens
-									each legume in getDataMois(indexMois).legumes
-										li
-											a(href="#{computeLink(legume)}") #{legume.nom}													
-		h1 Pourquoi manger des légumes et des fruits de saison ?
-		p C’est vrai ça. Pourquoi s’embêter à respecter la saison des fruits et des légumes alors que nos supermarchés en regorgent, venues du monde entier, toute l’année !
-		p Si vous n’êtes pas déjà convaincu, voilà plusieurs arguments qui pourraient vous faire réfléchir :
-		h2 Pour le goût !
-		p Les fruits provenant de pays éloignés ne peuvent pas être récoltés mures. Ils pourriraient pendant le transport… Ils sont donc récoltés verts. Ils n’ont donc pas le temps de se gorger de saveur grâce à une exposition au soleil suffisante.
-		p Qui dit consommer des fruits et légumes de saison, dit les consommer localement ! Ceux-là sont récoltés bien mure, et plein de goût !
-		h2 Pour la santé !
-		div.section.group
-			section.col.span_4_of_12
-				h3 Ils répondent à nos besoins nutritionnels du moment !
-				p En été, notre organisme consomme moins de calories mais nécessite plus d’eau.  Ça tombe bien, tous les légumes et fruits de saison en sont gorgés : Le melon, la salade,  la tomate, la courgette, les fruits rouge etc.
-				p En hiver, par contre, les jours sont plus court, notre corps est en proie à diverses infections et à une grande fatigue. Les légumes et fruits de saison sont parfait pour améliorer notre système immunitaire et sont riches en vitamines C : L’orange, la courge, le navet, le kiwi.
-				p Coïncidences ? Je ne crois pas…
-			section.col.span_4_of_12
-				h3 Ils sont riches en antioxydants !
-				p Les antioxydants nous protègent des agressions du quotidien : les UV, la pollution, le tabac… Ils permettent à nos cellules de rester jeunes et de protéger l’apparition de certaines maladies comme le cancer par exemple.
-				p Les fruits et légumes développent des antioxydants pour se protéger d’une exposition prolongée au soleil. C’est pourquoi les fruits et légumes de saisons en contiennent en grande quantité !
-			section.col.span_4_of_12
-				h3 Ils sont moins traités !
-				p Un fruit récolté hors saison, aura tendance à être aspergé de pesticides et gavé de nutriments chimiques pour compenser son manque d’exposition au soleil. S’ils viennent d’un pays éloigné, les produits ne sont pas forcément aussi bien réglementés qu’en Europe. Aujourd’hui, de plus en plus d’études se penchent sur l’impact sur la santé de la consommation de ces pesticides.
-		h2 Pour la planète !
-		p Qui dit légume hors saison ou légume venu de loin, dit fort impact carbone sur la planète. En effet, la production sous serre consomme bien plus d’énergie qu’une consommation naturelle en saison. Le transport de fruits et légumes d’un bout à l’autre de la planète à un impact extrêmement important sur la consommation de carburant et donc de gaz à effet de serre ! Consommer des produits locaux de saison, permet de limiter l’emprunte carbone de la production.
-		h2 Pour le prix !
-		p Les legumes de saison produits localement nécessitent moins de transport et ne sont soumis à aucune taxe d’importation. C’est pourquoi, à l’inverse des idées recues, leur coût peut souvent être moindre.
-		p En résumé, il n’existe aucune raison valable de ne pas respecter la saison des fruits et des legumes.
-		p À chaque legume sa saison !
+    article
+        - var moisCourant = new Date().getMonth() + 1
+        section(class="#{getSaison(moisCourant).nom} bloc top")
+            h1 Le légume du mois
+            +liste(getLegumesDuMois(moisCourant))
+            h1 Le fruit du mois
+            +liste(getFruitsDuMois(moisCourant))
+        h1 Le tableau complet des fruits et légumes
+        each saison in getSaisons()
+            section(class="#{saison.nom} tableau bloc vertical-margin")
+                h1 <a href="/#{saison.nom}.html">#{saison.titre}</a>
+                .section.group
+                    .fruits.col.span_6_of_12
+                        h2 Les fruits
+                        each indexMois in saison.mois
+                            - var mois = getMois(indexMois)
+                            .mois.col.span_3_of_12
+                                h3 <a href="/#{mois.nom}.html">#{mois.titre}</a>
+                                ul.liens
+                                    each fruit in getDataMois(indexMois).fruits
+                                        li
+                                            a(href="#{computeLink(fruit)}") #{fruit.nom}
+                    .legumes.col.span_6_of_12
+                        h2 Les légumes
+                        each indexMois in saison.mois
+                            - var mois = getMois(indexMois)
+                            .mois.col.span_3_of_12
+                                h3 #{mois.titre}
+                                ul.liens
+                                    each legume in getDataMois(indexMois).legumes
+                                        li
+                                            a(href="#{computeLink(legume)}") #{legume.nom}
+        h1 Pourquoi manger des légumes et des fruits de saison ?
+        p C’est vrai ça. Pourquoi s’embêter à respecter la saison des fruits et des légumes alors que nos supermarchés en regorgent, venues du monde entier, toute l’année !
+        p Si vous n’êtes pas déjà convaincu, voilà plusieurs arguments qui pourraient vous faire réfléchir :
+        h2 Pour le goût !
+        p Les fruits provenant de pays éloignés ne peuvent pas être récoltés mures. Ils pourriraient pendant le transport… Ils sont donc récoltés verts. Ils n’ont donc pas le temps de se gorger de saveur grâce à une exposition au soleil suffisante.
+        p Qui dit consommer des fruits et légumes de saison, dit les consommer localement ! Ceux-là sont récoltés bien mure, et plein de goût !
+        h2 Pour la santé !
+        div.section.group
+            section.col.span_4_of_12
+                h3 Ils répondent à nos besoins nutritionnels du moment !
+                p En été, notre organisme consomme moins de calories mais nécessite plus d’eau.  Ça tombe bien, tous les légumes et fruits de saison en sont gorgés : Le melon, la salade,  la tomate, la courgette, les fruits rouge etc.
+                p En hiver, par contre, les jours sont plus court, notre corps est en proie à diverses infections et à une grande fatigue. Les légumes et fruits de saison sont parfait pour améliorer notre système immunitaire et sont riches en vitamines C : L’orange, la courge, le navet, le kiwi.
+                p Coïncidences ? Je ne crois pas…
+            section.col.span_4_of_12
+                h3 Ils sont riches en antioxydants !
+                p Les antioxydants nous protègent des agressions du quotidien : les UV, la pollution, le tabac… Ils permettent à nos cellules de rester jeunes et de protéger l’apparition de certaines maladies comme le cancer par exemple.
+                p Les fruits et légumes développent des antioxydants pour se protéger d’une exposition prolongée au soleil. C’est pourquoi les fruits et légumes de saisons en contiennent en grande quantité !
+            section.col.span_4_of_12
+                h3 Ils sont moins traités !
+                p Un fruit récolté hors saison, aura tendance à être aspergé de pesticides et gavé de nutriments chimiques pour compenser son manque d’exposition au soleil. S’ils viennent d’un pays éloigné, les produits ne sont pas forcément aussi bien réglementés qu’en Europe. Aujourd’hui, de plus en plus d’études se penchent sur l’impact sur la santé de la consommation de ces pesticides.
+        h2 Pour la planète !
+        p Qui dit légume hors saison ou légume venu de loin, dit fort impact carbone sur la planète. En effet, la production sous serre consomme bien plus d’énergie qu’une consommation naturelle en saison. Le transport de fruits et légumes d’un bout à l’autre de la planète à un impact extrêmement important sur la consommation de carburant et donc de gaz à effet de serre ! Consommer des produits locaux de saison, permet de limiter l’emprunte carbone de la production.
+        h2 Pour le prix !
+        p Les legumes de saison produits localement nécessitent moins de transport et ne sont soumis à aucune taxe d’importation. C’est pourquoi, à l’inverse des idées recues, leur coût peut souvent être moindre.
+        p En résumé, il n’existe aucune raison valable de ne pas respecter la saison des fruits et des legumes.
+        p À chaque legume sa saison !
