@@ -13,4 +13,6 @@ block contentBlock
         h2 Les bienfaits
         p
             != fruit.bienfaits
+        p Et n'oubliez pas, pour la santé et pour la planète, à chaque fruit sa saison!
+        h2  J'aime #{fruit.nom} !
         .fb-like(data-href="#{computeLink(fruit, true)}", data-layout="button_count", data-share="true")

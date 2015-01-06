@@ -1,79 +1,80 @@
 nav.annee {
-	background-color: @gray;
-	border: solid 1px;
+    background-color: @gray;
+    border: solid 1px;
 
-	> h3, >h3.printemps, >h3.automne, >h3.hiver, >h3.ete{
-		background-color: @gray;
-		text-align: center;
-	}
-	
-	.saison {
-		background-color: inherit;
-		display: inline-flex;
-		display: -webkit-inline-flex;
-		-webkit-justify-content:space-between;
-		flex-flow: row;
-		justify-content: space-between;
-		align-items: center;
-		width: 100%;
-	}
-	
-	h4.petit-rond:hover {
-		cursor: pointer;
-	}
-	
-	h4.petit-rond > a {
-		margin-top: 2em;
-		font-size: .9em;
-		text-align: center;
-	}	
+    > h3, >h3.printemps, >h3.automne, >h3.hiver, >h3.ete{
+        background-color: @gray;
+        text-align: center;
+        font-size: 1.5em;
+    }
+
+    .saison {
+        background-color: inherit;
+        display: inline-flex;
+        display: -webkit-inline-flex;
+        -webkit-justify-content:space-between;
+        flex-flow: row;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+    }
+
+    h4.petit-rond:hover {
+        cursor: pointer;
+    }
+
+    h4.petit-rond > a {
+        margin-top: 2em;
+        font-size: .9em;
+        text-align: center;
+    }
 }
 
 .overlay {
-	display: none;
-	position: fixed;
-	background-color: @black;
-	opacity: 0.9;
-	left: 0;
-	top: 0;
-	width:100%;
-	height:100%;
-	text-align:center;
-	z-index: 1000;
-	.popup {
-		margin-left: auto;
-		margin-right: auto;
-		max-width: 400px;
-		min-width: 300px;
-		margin-top: 5%;		
-		background-color: @gray;
-		border:1px solid #000;
-		padding:15px;
-		.close {
-			float: right;
-			font-size: 2em;
-		}
-		.close:hover {
-			cursor: pointer;
-		}
-	}
+    display: none;
+    position: fixed;
+    background-color: @black;
+    opacity: 0.9;
+    left: 0;
+    top: 0;
+    width:100%;
+    height:100%;
+    text-align:center;
+    z-index: 1000;
+    .popup {
+        margin-left: auto;
+        margin-right: auto;
+        max-width: 400px;
+        min-width: 300px;
+        margin-top: 5%;
+        background-color: @gray;
+        border:1px solid #000;
+        padding:15px;
+        .close {
+            float: right;
+            font-size: 2em;
+        }
+        .close:hover {
+            cursor: pointer;
+        }
+    }
 }
 
 nav.mois {
-	background-color: inherit;
-	display: inline-flex;
-	display: -webkit-inline-flex;
-	justify-content: space-between;
-	-webkit-justify-content:space-between;
-	flex-flow: row;
-	align-items: center;
-	margin-top: 1em;
+    background-color: inherit;
+    display: inline-flex;
+    display: -webkit-inline-flex;
+    justify-content: space-between;
+    -webkit-justify-content:space-between;
+    flex-flow: row;
+    align-items: center;
+    margin-top: 1em;
 
-	> a {
-		border-radius: 0.3em;
-		border: solid 1px;
-		font-size: 0.8em;
-		margin-right:0.2em;
-		padding: 0.3em;
-	}
+    > a {
+        border-radius: 0.3em;
+        border: solid 1px;
+        font-size: 0.8em;
+        margin-right:0.2em;
+        padding: 0.3em;
+    }
 }
