@@ -1,7 +1,8 @@
 mixin header-mixin(legume)
     header
+        - var titre = legume.creditPhoto?legume.creditPhoto.titre:legume.nom;
         .gros-rond
-            a(href="#{legume.creditPhoto?legume.creditPhoto.lien:'#'}", title="#{legume.creditPhoto?legume.creditPhoto.titre:legume.nom}")
-                img(src="#{computeImage(legume,true)}", onload="scale(event);", itemprop="image")
+            a(href="#{legume.creditPhoto?legume.creditPhoto.lien:'#'}", title="#{titre}")
+                img(src="#{computeImage(legume,true)}", alt="#{titre}", onload="scale(event);", itemprop="image")
         h1(itemprop="name") #{legume.nom}
     include ../navMois
