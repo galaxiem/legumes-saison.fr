@@ -1,5 +1,6 @@
 extends default.jade
 include mixins/header-mixin
+include mixins/video-mixin
 block descriptionBlock
     - var description = "Découvrez tous sur " + fruit.nom
 block titleBlock
@@ -10,6 +11,7 @@ block contentBlock
         h2 En cuisine
         p
             != fruit.cuisine
+        +video-mixin(fruit)
         h2 Les bienfaits
         p
             != fruit.bienfaits
