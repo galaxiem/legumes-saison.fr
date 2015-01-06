@@ -1,19 +1,17 @@
 extends default.jade
+include mixins/header-mixin
 block dataBlock
 block descriptionBlock
-	- var description = "Découvrez tous sur " + legume.nom
+    - var description = "Découvrez tous sur " + legume.nom
 block titleBlock
-	title #{legume.nom}
+    title #{legume.nom}
 block contentBlock
-	article(itemscope, itemtype="http://schema.org/Intangible")
-		.gros-rond
-			img(src="#{computeImage(legume,true)}", onload="scale(event);", itemprop="image")
-		include navMois
-		h1(itemprop="name") #{legume.nom}
-		h2 En cuisine
-		p
-			!= legume.cuisine
-		h2 Les bienfaits
-		p
-			!= legume.bienfaits
-		.fb-like(data-href="#{computeLink(legume, true)}", data-layout="button_count", data-share="true")
+    article(itemscope, itemtype="http://schema.org/Intangible", class="top")
+        +header-mixin(legume)
+        h2 En cuisine
+        p
+            != legume.cuisine
+        h2 Les bienfaits
+        p
+            != legume.bienfaits
+        .fb-like(data-href="#{computeLink(legume, true)}", data-layout="button_count", data-share="true")

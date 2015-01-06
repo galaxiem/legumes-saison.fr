@@ -1,0 +1,6 @@
+mixin header-mixin(legume)
+    header
+        .gros-rond
+                img(src="#{computeImage(legume,true)}", onload="scale(event);", itemprop="image")
+        h1(itemprop="name") #{legume.nom}
+    include ../navMois

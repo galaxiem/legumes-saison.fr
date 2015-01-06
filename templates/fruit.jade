@@ -1,18 +1,16 @@
 extends default.jade
+include mixins/header-mixin
 block descriptionBlock
-	- var description = "Découvrez tous sur " + fruit.nom
+    - var description = "Découvrez tous sur " + fruit.nom
 block titleBlock
-	title #{fruit.nom}
+    title #{fruit.nom}
 block contentBlock
-	article(itemscope, itemtype="http://schema.org/Intangible")
-		.gros-rond
-			img(src="#{computeImage(fruit,true)}", onload="scale(event);", itemprop="image")
-		include navMois
-		h1(itemprop="name") #{fruit.nom}
-		h2 En cuisine
-		p
-			!= fruit.cuisine
-		h2 Les bienfaits
-		p
-			!= fruit.bienfaits
-		.fb-like(data-href="#{computeLink(fruit, true)}", data-layout="button_count", data-share="true")
+    article(itemscope, itemtype="http://schema.org/Intangible",class="top")
+        +header-mixin(fruit)
+        h2 En cuisine
+        p
+            != fruit.cuisine
+        h2 Les bienfaits
+        p
+            != fruit.bienfaits
+        .fb-like(data-href="#{computeLink(fruit, true)}", data-layout="button_count", data-share="true")
