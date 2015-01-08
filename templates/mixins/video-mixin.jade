@@ -1,0 +1,3 @@
+mixin video-mixin(legume)
+	if legume.video
+		iframe(class="video", width="300",height="225",src="//www.youtube.com/embed/#{legume.video.ref}",frameborder="0",allowfullscreen)
