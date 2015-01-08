@@ -1,21 +1,21 @@
 extends default.jade
 include mixins/header-mixin
 include mixins/video-mixin
+include mixins/social-mixin
 block dataBlock
 block descriptionBlock
-    - var description = "Découvrez tout sur " + legume.nom + " : sa saison, ses diverses utilisations en cuisine, ses bienfaits..."
+	- var description = "Découvrez tout sur " + legume.nom + " : sa saison, ses diverses utilisations en cuisine, ses bienfaits..."
 block titleBlock
-    title #{legume.nom}
+	title #{legume.nom}
 block contentBlock
-    article(itemscope, itemtype="http://schema.org/Intangible", class="top")
-        +header-mixin(legume)
-        h2 En cuisine
-        p
-            != legume.cuisine
-        +video-mixin(legume)
-        h2 Les bienfaits
-        p
-            != legume.bienfaits
-        p Et n'oubliez pas, pour la santé et pour la planète, à chaque légume sa saison!
-        h2  J'aime #{legume.nom} !
-        .fb-like(data-href="#{computeLink(legume, true)}", data-layout="button_count", data-share="true")
+	article(itemscope, itemtype="http://schema.org/Intangible", class="top")
+		+header-mixin(legume)
+		h2 En cuisine
+		p
+			!= legume.cuisine
+		+video-mixin(legume)
+		h2 Les bienfaits
+		p
+			!= legume.bienfaits
+		p Et n'oubliez pas, pour la santé et pour la planète, à chaque légume sa saison!
+		+social-mixin(legume)

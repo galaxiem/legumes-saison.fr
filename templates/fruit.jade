@@ -1,20 +1,20 @@
 extends default.jade
 include mixins/header-mixin
 include mixins/video-mixin
+include mixins/social-mixin
 block descriptionBlock
-    - var description = "Découvrez tout sur " + fruit.nom + " : sa saison, ses diverses utilisations en cuisine, ses bienfaits..."
+	- var description = "Découvrez tout sur " + fruit.nom + " : sa saison, ses diverses utilisations en cuisine, ses bienfaits..."
 block titleBlock
-    title #{fruit.nom}
+	title #{fruit.nom}
 block contentBlock
-    article(itemscope, itemtype="http://schema.org/Intangible",class="top")
-        +header-mixin(fruit)
-        h2 En cuisine
-        p
-            != fruit.cuisine
-        +video-mixin(fruit)
-        h2 Les bienfaits
-        p
-            != fruit.bienfaits
-        p Et n'oubliez pas, pour la santé et pour la planète, à chaque fruit sa saison!
-        h2  J'aime #{fruit.nom} !
-        .fb-like(data-href="#{computeLink(fruit, true)}", data-layout="button_count", data-share="true")
+	article(itemscope, itemtype="http://schema.org/Intangible",class="top")
+		+header-mixin(fruit)
+		h2 En cuisine
+		p
+			!= fruit.cuisine
+		+video-mixin(fruit)
+		h2 Les bienfaits
+		p
+			!= fruit.bienfaits
+		p Et n'oubliez pas, pour la santé et pour la planète, à chaque fruit sa saison!
+		+social-mixin(fruit)
