@@ -1,45 +1,45 @@
 doctype html
 html(lang="fr")
-	block dataBlock
-	head
-		meta(charset="utf-8")
-		meta(http-equiv="content-type",content="text/html; charset=utf-8")
-		meta(name="viewport",content="width=device-width,initial-scale=1")
-		block titleBlock
-			title Légumes et fruits de saison
-		block descriptionBlock
-		meta(name="description",content="#{description || 'Legumes et Fruits de saison'}")
-		link(href='http://fonts.googleapis.com/css?family=Dancing+Script',rel='stylesheet',type='text/css')
-		link(href='http://fonts.googleapis.com/css?family=Varela+Round',rel='stylesheet',type='text/css')
-		link(href='http://fonts.googleapis.com/css?family=Lato',rel='stylesheet',type='text/css')
-		link(href='http://fonts.googleapis.com/css?family=Yanone+Kaffeesatz',rel='stylesheet',type='text/css')
-		link(href='http://fonts.googleapis.com/css?family=Poiret+One',rel='stylesheet',type='text/css')
-		link(rel="stylesheet",href="/styles/legume.css",type="text/css")
-		link(rel="icon",type="image/png",href="/images/favicon.png")
-		script(src="http://code.jquery.com/jquery-2.1.1.min.js")
-		script(src="/js/legume.js")
-	body(class=saison!=undefined ? "#{saison.nom}":"")
-		include facebook
-		.overlay
-			.popup.bloc
-				.close X
-				include nav
-		header.banner.slim
-			.menu &#9776;
-			.text
-				h1 Légumes-saison.fr
-				p à chaque légume sa saison
-		header.banner
-			.text
-				h1 Légumes-saison.fr
-				p à chaque légume sa saison
-		.pubbanner
-			include pub1
-		block contentBlock
-			.fb-share-button(data-href="https://www.facebook.com/legumesalabonnesaison", data-layout="button_count")
-		.droite
-			include nav
-			include facebook-likebox-pages
-			include pub2
-			include pub3
-		include analytics
+    block dataBlock
+    head
+        meta(charset="utf-8")
+        meta(http-equiv="content-type",content="text/html; charset=utf-8")
+        meta(name="viewport",content="width=device-width,initial-scale=1")
+        block titleBlock
+            title Légumes et fruits de saison
+        block descriptionBlock
+        meta(name="description",content="#{description || 'Legumes et Fruits de saison'}")
+        link(href='http://fonts.googleapis.com/css?family=Dancing+Script',rel='stylesheet',type='text/css')
+        link(href='http://fonts.googleapis.com/css?family=Varela+Round',rel='stylesheet',type='text/css')
+        link(href='http://fonts.googleapis.com/css?family=Lato',rel='stylesheet',type='text/css')
+        link(href='http://fonts.googleapis.com/css?family=Yanone+Kaffeesatz',rel='stylesheet',type='text/css')
+        link(href='http://fonts.googleapis.com/css?family=Poiret+One',rel='stylesheet',type='text/css')
+        link(rel="stylesheet",href="/styles/legume.css",type="text/css")
+        link(rel="icon",type="image/png",href="/images/favicon.png")
+        script(src="http://code.jquery.com/jquery-2.1.1.min.js")
+        script(src="/js/legume.js")
+    body(class=saison!=undefined ? "#{saison.nom}":"")
+        include facebook
+        .overlay
+            .popup.bloc
+                .close X
+                include nav
+        header.banner.slim
+            .menu &#9776;
+            .text
+                h1 Légumes-saison.fr
+                p à chaque légume sa saison
+        header.banner
+            .text
+                h1 Légumes-saison.fr
+                p à chaque légume sa saison
+        //.pubbanner
+            //include pub1
+        block contentBlock
+            .fb-share-button(data-href="https://www.facebook.com/legumesalabonnesaison", data-layout="button_count")
+        .droite
+            include nav
+            include facebook-likebox-pages
+            //include pub2
+            //include pub3
+        include analytics
